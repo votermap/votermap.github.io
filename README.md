@@ -37,12 +37,8 @@ tile-join --no-tile-size-limit -o all.mbtiles tiles/*
 ## Serve the map
 At this point, we can display the map using this `.mbtiles` file and the `mbtileserver` package. Run `mbtileserver -d . -p 1234` (this port is hard-coded) to serve the map tiles. In another terminal, run `python -m http.server 8080` (or any port - this one doesn't matter) to serve the map UI at http://localhost:8080/map.html. The reason we need to run a second server for the static HTML page is that we request the base map tiles from Stadia, which requires an API key for requests that aren't from `localhost`. 
 
-## Deploy
-```
-docker build --provenance=false --platform linux/amd64 . -t tiles
-docker tag tiles:v1 <ecr url>
-docker push <ecr url>
-```
+## Deploy the tiles
+Rather than actually hosting an instance of `mbtileserver`, the tiles are hosted for produciton in an S3 bucket. We'll have to extract every tile from the `.mbtiles` archive and push it to S3 with `python tiler2.py`.
 
 ## Raw Data Sources
 Every downloaded zip should be placed in the `data` directory and then extracted.

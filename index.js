@@ -59,8 +59,8 @@ function addDotDensityLayer(map, symbologyColumn, groupByColumn, dotScale, eleme
 
     map.addSource('dot-density-source', {
         type: 'vector',
-        // tiles: [`http://resultmap.s3-website.us-east-2.amazonaws.com/tiles/{z}/{x}/{y}.pbf`],
-        tiles: [`http://localhost:7800/services/all/tiles/{z}/{x}/{y}.pbf`],
+        tiles: [`http://resultmap.s3-website.us-east-2.amazonaws.com/tiles/{z}/{x}/{y}.pbf`],
+        // tiles: [`http://localhost:7800/services/all/tiles/{z}/{x}/{y}.pbf`],
         // tiles: [`http://localhost:1234/tiles/static/{z}/{x}/{y}.pbf`],
         minzoom: 0,
         maxzoom: 10
