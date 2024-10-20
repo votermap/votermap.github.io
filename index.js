@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json',
         center: [-98.5795, 39.8283],
         zoom: 3.5,
-        maxZoom: 13
+        maxZoom: 10
     });
 
     const afterMap = new maplibregl.Map({
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         style: 'https://tiles.stadiamaps.com/styles/alidade_smooth.json',
         center: [-98.5795, 39.8283],
         zoom: 3.5,
-        maxZoom: 13
+        maxZoom: 10
     });
 
     const container = '#comparison-container';
